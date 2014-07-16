@@ -1,0 +1,15 @@
+
+config.tx_extbase{
+    persistence{
+        classes{
+
+            Rattazonk\Slimblog\Domain\Model\Category {
+                mapping {
+                    tableName = pages
+                    recordType = Tx_Slimblog_Category
+                }
+            }
+            
+    	}
+    }
+}
