@@ -28,11 +28,30 @@ namespace Rattazonk\Slimblog\Domain\Model;
  ***************************************************************/
 
 /**
- * 
+ * doesn't extend extbase backend user, because we dont need the overhead
+ * Author
  */
-class Category extends \Rattazonk\Extbasepages\Domain\Model\Page {
-	
-	/** @var TYPO3\CMS\Extbase\Persistence\ObjectStorage<Rattazonk\Slimblog\Domain\Model\BlogEntry> **/
-	protected $subPages;
+class Author extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
+	/** @var string **/
+	protected $name = '';
+
+	/**
+	 * @param string
+	 * @return void
+	 */
+	public function setName( $name ) {
+		$this->name = $name;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getName() {
+		return $this->name;
+	}
+
+	public function __toString() {
+		return $this->getName();
+	}
 }

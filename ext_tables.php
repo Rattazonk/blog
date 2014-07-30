@@ -12,6 +12,7 @@ if (!defined('TYPO3_MODE')) {
 
 // add category page doktype
 
+// TODO to constant
 $categoryPageDoktype = '48';
 $GLOBALS['PAGES_TYPES'][$categoryPageDoktype] = array(
 	'type' => 'web',
@@ -27,6 +28,7 @@ $GLOBALS['TCA']['pages_language_overlay']['columns']['doktype']['config']['items
 	$GLOBALS['TCA']['pages']['columns']['doktype']['config']['items']
 ));
 
+// TODO to configuration
 $newColumns = array(
 	'tx_slimblog_author' => array(
 		'exclude' => 0,

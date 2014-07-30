@@ -9,6 +9,10 @@
 			<trans-unit id="pages.tx_extbase_type.Tx_Slimblog_Category">
 				<source>Slimblog Category</source>
 			</trans-unit>
+
+			<trans-unit id="author">
+				<source>Author</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

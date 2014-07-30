@@ -1,5 +1,6 @@
 <?php
 namespace Rattazonk\Slimblog\Domain\Model;
+use \TYPO3\CMS\Extbase\Reflection\ObjectAccess;
 
 
 /***************************************************************
@@ -30,9 +31,22 @@ namespace Rattazonk\Slimblog\Domain\Model;
 /**
  * 
  */
-class Category extends \Rattazonk\Extbasepages\Domain\Model\Page {
-	
-	/** @var TYPO3\CMS\Extbase\Persistence\ObjectStorage<Rattazonk\Slimblog\Domain\Model\BlogEntry> **/
+class BlogEntry extends \Rattazonk\Extbasepages\Domain\Model\Page {
+
+	/** @var Rattazonk\Slimblog\Domain\Model\Author **/
+	protected $author;
+
+	/**
+	 * cast it to blog entries
+	 * @var TYPO3\CMS\Extbase\Persistence\ObjectStorage<Rattazonk\Slimblog\Domain\Model\BlogEntry>
+	 * **/
 	protected $subPages;
+
+	/**
+	 * @return Rattazonk\Slimblog\Domain\Model\Author
+	 */
+	public function getAuthor() {
+		return $this->author;
+	}
 
 }

@@ -1,15 +1,28 @@
+config.tx_extbase.persistence.classes {
+	Rattazonk\Slimblog\Domain\Model\Category {
+		mapping {
+			tableName = pages
+			recordType = 48
+		}
+	}
 
-config.tx_extbase{
-    persistence{
-        classes{
+	Rattazonk\Slimblog\Domain\Model\BlogEntry {
+		#sorgt für n record type constraint, sodass es keine BlogEntries unter categories gibt. EY!
+		subclasses.1406652071 = Rattazonk\Slimblog\Domain\Model\Category
+		mapping {
+			tableName = pages
+			columns {
+				tx_slimblog_author.mapOnProperty = author
+			}
+		}
+	}
 
-            Rattazonk\Slimblog\Domain\Model\Category {
-                mapping {
-                    tableName = pages
-                    recordType = Tx_Slimblog_Category
-                }
-            }
-            
-    	}
-    }
+	Rattazonk\Slimblog\Domain\Model\Author {
+		mapping {
+			tableName = be_users
+			columns {
+				realName.mapOnProperty = name
+			}
+		}
+	}
 }

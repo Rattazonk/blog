@@ -1,5 +1,5 @@
 <?php
-namespace Rattazonk\Slimblog\Domain\Model;
+namespace Rattazonk\Slimblog\Domain\Repository;
 
 
 /***************************************************************
@@ -28,11 +28,8 @@ namespace Rattazonk\Slimblog\Domain\Model;
  ***************************************************************/
 
 /**
- * 
+ * The repository for Pages
  */
-class Category extends \Rattazonk\Extbasepages\Domain\Model\Page {
-	
-	/** @var TYPO3\CMS\Extbase\Persistence\ObjectStorage<Rattazonk\Slimblog\Domain\Model\BlogEntry> **/
-	protected $subPages;
+class CategoryRepository extends \Rattazonk\Extbasepages\Domain\Repository\PageRepository {
 
 }
