@@ -20,13 +20,13 @@ $GLOBALS['PAGES_TYPES'][$categoryPageDoktype] = array(
 );
 
 // Add the new doktype to the page type selector
-$GLOBALS['TCA']['pages']['columns']['doktype']['config']['items'][] = array(
+$categoryPageDoktypeConfig = array(
         'LLL:EXT:slimblog/Resources/Private/Language/locallang.xlf:category_page_type',
         $categoryPageDoktype
 );
-$GLOBALS['TCA']['pages_language_overlay']['columns']['doktype']['config']['items'][] = array_shift(array_values(
-	$GLOBALS['TCA']['pages']['columns']['doktype']['config']['items']
-));
+
+$GLOBALS['TCA']['pages']['columns']['doktype']['config']['items'][] = $categoryPageDoktypeConfig;
+$GLOBALS['TCA']['pages_language_overlay']['columns']['doktype']['config']['items'][] = $categoryPageDoktypeConfig;
 
 // TODO to configuration
 $newColumns = array(
